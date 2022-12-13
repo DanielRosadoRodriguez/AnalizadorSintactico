@@ -18,4 +18,4 @@ def test_read_file():
 
 def test_file_content():
     path: str = "./text.txt"
-    assert data_access.read_file(path) == [["texto", "de"], ["ejemplo"]]
+    assert data_access.read_file(path) == ["texto", "de", "ejemplo"]

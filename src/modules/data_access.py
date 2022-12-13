@@ -9,8 +9,15 @@ def file_exists(path: str):
 
 
 def read_file(path: str):
-    content: list = []
+    if file_exists(path):
+        return get_file_content(path)
+    else:
+        raise Exception("File does not exist")
+
+
+def get_file_content(path):
+    content = []
     with open(path, 'r') as file:
         for line in file:
-            content.append(line.rstrip().split())
-        return content
+            content.extend(line.rstrip().split())
+    return content
