@@ -11,3 +11,10 @@ def is_elem(remaining_elements: list) -> bool:
         return True
     else:
         return False
+
+
+def is_list_not_empty(elements: list) -> bool:
+    if elements:
+        return True
+    else:
+        return False
