@@ -1,13 +1,12 @@
-
-def is_prog(elements: list) -> bool:
-    if elements[0] == 'PROGRAMA' and elements[-1] == 'FINPROG':
+def is_prog(first_word: str, last_word: str) -> bool:
+    if first_word == 'PROGRAMA' and last_word == 'FINPROG':
         return True
     else:
         return False
 
 
-def is_elem(remaining_elements: list) -> bool:
-    if remaining_elements[0] == "[id]" or remaining_elements[0] == "[valorn]":
+def is_elem(word: str) -> bool:
+    if word == "[id]" or word == "[valorn]":
         return True
     else:
         return False
@@ -18,3 +17,11 @@ def is_list_not_empty(elements: list) -> bool:
         return True
     else:
         return False
+
+
+def is_sent_imprime(first_word: str, next_word: str) -> bool:
+    if first_word == 'IMPRIME' and next_word == '[txt]':
+        return True
+    else:
+        return False
+
