@@ -1,5 +1,3 @@
-from src.modules.exeptions import CompilacionExitosaException
-
 
 def is_prog(remaining_elements: list) -> bool:
     first_word: str = remaining_elements.pop(0)
