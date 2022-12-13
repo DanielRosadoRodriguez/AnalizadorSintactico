@@ -1,13 +1,5 @@
-[valorn]
-+
-[valorn]
-[valorn]
-*
-[valorn]
-[valorn]
-/
-[valorn]
 PROGRAMA
+[id]
 [id]
 =
 [valorn]
@@ -60,3 +52,4 @@ LEE
 [valorn]
 LEE
 [litalfnum]
+FINPROG

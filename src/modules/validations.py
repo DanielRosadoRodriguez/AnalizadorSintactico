@@ -1,3 +1,13 @@
 
-def is_elem_grammar_correct() -> bool:
-    return True
+def is_prog(elements: list) -> bool:
+    if elements[0] == 'PROGRAMA' and elements[-1] == 'FINPROG':
+        return True
+    else:
+        return False
+
+
+def is_elem(remaining_elements: list) -> bool:
+    if remaining_elements[0] == "[id]" or remaining_elements[0] == "[valorn]":
+        return True
+    else:
+        return False
