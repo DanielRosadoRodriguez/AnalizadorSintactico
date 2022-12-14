@@ -84,3 +84,8 @@ def test_is_operator_4():
 def test_is_not_operator():
     elements = ['cualquiercosa']
     assert len(validations.is_operator(elements)) != 0
+
+
+def test_is_operation():
+    elements = ['[valorn]', '+', '[id]']
+    assert len(validations.is_operation(elements)) == 0

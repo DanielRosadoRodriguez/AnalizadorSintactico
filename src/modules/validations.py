@@ -19,6 +19,23 @@ def is_elem(remaining_elements: list) -> list:
     return remaining_elements
 
 
+def is_operation(remaining_elements: list) -> list:
+    if remaining_elements:
+        revised_list = is_value(remaining_elements)
+        if remaining_elements != revised_list:
+            remaining_elements = revised_list
+            if remaining_elements in is_operator(remaining_elements):
+                is_operation(is_operator(remaining_elements))
+                return remaining_elements
+    return remaining_elements
+
+
+def two_list_equal(list1, list2):
+    if list1 == list2:
+        return True
+    else:
+        return False
+
 def is_value(remaining_elements: list) -> list:
     if remaining_elements:
         if remaining_elements[0] in ['[id]', '[valorn]']:
