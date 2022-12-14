@@ -30,3 +30,17 @@ def test_is_not_program_file_5():
     elements = ['PROGRAMA']
     assert len(validations.is_program_file(elements)) != 0
 
+
+def test_is_elem():
+    elements = ['[id]']
+    assert len(validations.is_elem(elements)) == 0
+
+
+def test_is_elem_2():
+    elements = ['[valorn]']
+    assert len(validations.is_elem(elements)) == 0
+
+
+def test_is_not_elem():
+    elements = ['cualquiercosa']
+    assert len(validations.is_elem(elements)) != 0

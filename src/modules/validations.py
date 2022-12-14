@@ -10,3 +10,10 @@ def is_program_file(remaining_elements: list) -> list:
             return remaining_elements
     return remaining_elements
 
+
+def is_elem(remaining_elements: list) -> list:
+    if remaining_elements:
+        if remaining_elements[0] in ['[id]', '[valorn]']:
+            remaining_elements.pop(0)
+            return remaining_elements
+    return remaining_elements
