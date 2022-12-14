@@ -20,18 +20,18 @@ def is_elem(remaining_elements: list) -> list:
 
 
 def is_operation(remaining_elements: list) -> list:
-    scope_elements = remaining_elements[:]
+    scope_elements: list = remaining_elements[:]
     if scope_elements:
         if len(scope_elements) > 2 and scope_elements[0] in ['[id]', '[valorn]'] and scope_elements[1] in ['+', '-', '*', '/']:
-            result = is_operation(scope_elements[2:])
+            result: list = is_operation(scope_elements[2:])
             return result
         elif len(scope_elements) >= 2 and scope_elements[0] in ['[id]', '[valorn]'] and scope_elements[1] not in['+', '-', '*', '/']:
             scope_elements.pop(0)
-            current_elements = scope_elements[:]
+            current_elements: list = scope_elements[:]
             return current_elements
         elif len(scope_elements) >= 1 and scope_elements[0] in ['[id]', '[valorn]']:
             scope_elements.pop(0)
-            current_elements = scope_elements[:]
+            current_elements: list = scope_elements[:]
             return current_elements
     return scope_elements
 
