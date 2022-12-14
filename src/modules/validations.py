@@ -19,9 +19,12 @@ def is_elem(remaining_elements: list) -> bool:
 
 def is_sent_imprime(remaining_elements: list) -> bool:
     first_word: str = remaining_elements.pop(0)
-    next_word: str = remaining_elements.pop(0)
-    if first_word == 'IMPRIME' and next_word == '[txt]':
-        return True
+    if first_word == 'IMPRIME':
+        next_word: str = remaining_elements.pop(0)
+        if next_word == '[txt]':
+            return True
+        else:
+            return False
     else:
         return False
 
