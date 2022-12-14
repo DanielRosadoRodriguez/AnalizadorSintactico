@@ -21,7 +21,6 @@ def is_imprime_txt(remaining_elements: list) -> list:
     return remaining_elements
 
 
-
 def is_elem(remaining_elements: list) -> list:
     if remaining_elements:
         if remaining_elements[0] in ['[id]', '[valorn]']:
