@@ -14,7 +14,6 @@ def is_program_file(remaining_elements: list) -> list:
 def is_sents_sent(remaining_elements: list) -> list:
     if len(remaining_elements) >= 2:
         result = remaining_elements[:]
-        result_1: list = ['dummy']
         cont = 0
         while True:
             result = is_imprime_txt(result)
