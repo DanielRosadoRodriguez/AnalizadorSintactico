@@ -40,6 +40,16 @@ def is_lee(remaining_elements: list) -> list:
     return remaining_elements
 
 
+def is_assignment(remaining_elements: list) -> list:
+    if remaining_elements:
+        if len(remaining_elements) >= 3 and remaining_elements[0] == '[id]' and remaining_elements[1] == '=':
+            assignment = remaining_elements[2:]
+            result = is_operation(assignment)
+            if assignment != result:
+                return result
+    return remaining_elements[:]
+
+
 def is_elem(remaining_elements: list) -> list:
     if remaining_elements:
         if remaining_elements[0] in ['[id]', '[valorn]']:

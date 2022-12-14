@@ -205,3 +205,22 @@ def test_is_not_lee_3():
     elements = ['cualquiercosa']
     assert validations.is_lee(elements) == ['cualquiercosa']
 
+
+def test_is_asignment():
+    elements = ['[id]', '=', '[valorn]']
+    assert validations.is_assignment(elements) == []
+
+
+def test_is_asignment_2():
+    elements = ['[id]', '=', '[id]']
+    assert validations.is_assignment(elements) == []
+
+
+def test_is_not_asignment():
+    elements = ['[id]', '=']
+    assert validations.is_assignment(elements) == ['[id]', '=']
+
+
+def test_is_not_asignment_3():
+    elements = ['[id]']
+    assert validations.is_assignment(elements) == ['[id]']
