@@ -144,3 +144,8 @@ def test_is_not_imprime_txt_3():
 def test_is_not_imprime_txt_4():
     elements = ['IMPRIME', '[txt]', 'cualquiercosa']
     assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_not_imprime_txt_5():
+    elements = ['cualquiercosa']
+    assert len(validations.is_imprime_txt(elements)) != 0
