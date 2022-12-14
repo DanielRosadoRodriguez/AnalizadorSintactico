@@ -149,3 +149,39 @@ def test_is_not_imprime_txt_4():
 def test_is_not_imprime_txt_5():
     elements = ['cualquiercosa']
     assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_imprime_elem():
+    elements = ['IMPRIME', '[id]']
+    assert len(validations.is_imprime_elem(elements)) == 0
+
+
+def test_is_imprime_elem_2():
+    elements = ['IMPRIME', '[valorn]']
+    assert len(validations.is_imprime_elem(elements)) == 0
+
+
+def test_is_not_imprime_elem():
+    elements = ['[txt]', 'IMPRIME', '[txt]']
+    assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_not_imprime_elem_2():
+    elements = ['[txt]']
+    assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_not_imprime_elem_3():
+    elements = ['IMPRIME']
+    assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_not_imprime_elem_4():
+    elements = ['IMPRIME', '[txt]', 'cualquiercosa']
+    assert len(validations.is_imprime_txt(elements)) != 0
+
+
+def test_is_not_imprime_elem_5():
+    elements = ['cualquiercosa']
+    assert len(validations.is_imprime_txt(elements)) != 0
+
