@@ -46,46 +46,6 @@ def test_is_not_elem():
     assert len(validations.is_elem(elements)) != 0
 
 
-def test_is_value():
-    elements = ['[valorn]']
-    assert len(validations.is_value(elements)) == 0
-
-
-def test_is_value_2():
-    elements = ['[id]']
-    assert len(validations.is_value(elements)) == 0
-
-
-def test_is_not_value():
-    elements = ['cualquiercosa']
-    assert len(validations.is_value(elements)) != 0
-
-
-def test_is_operator():
-    elements = ['+']
-    assert len(validations.is_operator(elements)) == 0
-
-
-def test_is_operator_2():
-    elements = ['-']
-    assert len(validations.is_operator(elements)) == 0
-
-
-def test_is_operator_3():
-    elements = ['*']
-    assert len(validations.is_operator(elements)) == 0
-
-
-def test_is_operator_4():
-    elements = ['/']
-    assert len(validations.is_operator(elements)) == 0
-
-
-def test_is_not_operator():
-    elements = ['cualquiercosa']
-    assert len(validations.is_operator(elements)) != 0
-
-
 def test_is_operation():
     elements = ['[valorn]', '+', '[id]']
     assert len(validations.is_operation(elements)) == 0

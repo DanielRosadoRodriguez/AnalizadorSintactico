@@ -9,6 +9,12 @@ def is_program_file(remaining_elements: list) -> list:
             remaining_elements.pop()
             return remaining_elements
     return remaining_elements
+def is_sent(remaining_elements: list) -> list:
+    if remaining_elements:
+        pass
+
+
+    return remaining_elements
 
 
 def is_elem(remaining_elements: list) -> list:
@@ -35,20 +41,3 @@ def is_operation(remaining_elements: list) -> list:
             return current_elements
     return scope_elements
 
-
-def is_value(remaining_elements: list) -> list:
-    current_elements = remaining_elements[:]
-    if current_elements:
-        if current_elements[0] in ['[id]', '[valorn]']:
-            current_elements.pop(0)
-            return current_elements
-    return current_elements
-
-
-def is_operator(remaining_elements: list) -> list:
-    current_elements = remaining_elements[:]
-    if current_elements:
-        if current_elements[0] in ['+', '-', '*', '/']:
-            current_elements.pop(0)
-            return current_elements
-    return current_elements
