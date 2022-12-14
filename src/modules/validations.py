@@ -20,33 +20,35 @@ def is_elem(remaining_elements: list) -> list:
 
 
 def is_operation(remaining_elements: list) -> list:
-    if remaining_elements:
-        revised_list = is_value(remaining_elements)
-        if remaining_elements != revised_list:
-            remaining_elements = revised_list
-            if remaining_elements in is_operator(remaining_elements):
-                is_operation(is_operator(remaining_elements))
-                return remaining_elements
-    return remaining_elements
+    scope_elements = remaining_elements[:]
+    if scope_elements:
+        if len(scope_elements) > 2 and scope_elements[0] in ['[id]', '[valorn]'] and scope_elements[1] in ['+', '-', '*', '/']:
+            result = is_operation(scope_elements[2:])
+            return result
+        elif len(scope_elements) >= 2 and scope_elements[0] in ['[id]', '[valorn]'] and scope_elements[1] not in['+', '-', '*', '/']:
+            scope_elements.pop(0)
+            current_elements = scope_elements[:]
+            return current_elements
+        elif len(scope_elements) >= 1 and scope_elements[0] in ['[id]', '[valorn]']:
+            scope_elements.pop(0)
+            current_elements = scope_elements[:]
+            return current_elements
+    return scope_elements
 
-
-def two_list_equal(list1, list2):
-    if list1 == list2:
-        return True
-    else:
-        return False
 
 def is_value(remaining_elements: list) -> list:
-    if remaining_elements:
-        if remaining_elements[0] in ['[id]', '[valorn]']:
-            remaining_elements.pop(0)
-            return remaining_elements
-    return remaining_elements
+    current_elements = remaining_elements[:]
+    if current_elements:
+        if current_elements[0] in ['[id]', '[valorn]']:
+            current_elements.pop(0)
+            return current_elements
+    return current_elements
 
 
 def is_operator(remaining_elements: list) -> list:
-    if remaining_elements:
-        if remaining_elements[0] in ['+', '-', '*', '/']:
-            remaining_elements.pop(0)
-            return remaining_elements
-    return remaining_elements
+    current_elements = remaining_elements[:]
+    if current_elements:
+        if current_elements[0] in ['+', '-', '*', '/']:
+            current_elements.pop(0)
+            return current_elements
+    return current_elements

@@ -89,3 +89,23 @@ def test_is_not_operator():
 def test_is_operation():
     elements = ['[valorn]', '+', '[id]']
     assert len(validations.is_operation(elements)) == 0
+
+
+def test_is_operation_2():
+    elements = ['[valorn]', '+', '[id]', '-', '[valorn]', '/', '[id]', '*', '[valorn]']
+    assert len(validations.is_operation(elements)) == 0
+
+
+def test_is_not_operation_1():
+    elements = ['[valorn]', '+', '[id]', '+']
+    assert len(validations.is_operation(elements)) != 0
+
+
+def test_is_not_operation_2():
+    elements = ['[valorn]', '+', '-', '[id]', '+']
+    assert len(validations.is_operation(elements)) != 0
+
+
+def test_is_not_operation_3():
+    elements = ['+', '[id]', '[id]']
+    assert len(validations.is_operation(elements)) != 0
