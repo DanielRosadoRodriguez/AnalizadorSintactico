@@ -50,6 +50,4 @@ LEE
 [id]
 =
 [valorn]
-LEE
-[litalfnum]
 FINPROG

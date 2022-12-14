@@ -7,7 +7,24 @@ def is_program_file(remaining_elements: list) -> list:
             remaining_elements.pop(0)
             remaining_elements.pop(0)
             remaining_elements.pop()
-            return remaining_elements
+            return is_sents_sent(remaining_elements[:])
+    return remaining_elements
+
+
+def is_sents_sent(remaining_elements: list) -> list:
+    if len(remaining_elements) >= 2:
+        result = remaining_elements[:]
+        result_1: list = ['dummy']
+        cont = 0
+        while True:
+            result = is_imprime_txt(result)
+            result = is_imprime_elem(result)
+            result = is_lee(result)
+            print(result)
+            result = is_assignment(result)
+            cont += 1
+            if cont == 5:
+                return result
     return remaining_elements
 
 
@@ -33,7 +50,7 @@ def is_imprime_elem(remaining_elements: list) -> list:
 
 def is_lee(remaining_elements: list) -> list:
     if remaining_elements:
-        if remaining_elements[0] == 'LEE' and remaining_elements[1] == '[id]':
+        if remaining_elements[0] == 'LEE' and remaining_elements[1] in ['[id]', '[valorn]']:
             remaining_elements.pop(0)
             remaining_elements.pop(0)
             return remaining_elements[:]
@@ -73,5 +90,9 @@ def is_operation(remaining_elements: list) -> list:
         elif len(scope_elements) >= 1 and scope_elements[0] in ['[id]', '[valorn]']:
             scope_elements.pop(0)
             current_elements: list = scope_elements[:]
+            return current_elements
+        elif len(scope_elements) >= 2 and scope_elements[0] in ['[id]', '[valorn]'] and scope_elements[1] == '[id]':
+            scope_elements.pop(0)
+            current_elements = scope_elements[:]
             return current_elements
     return scope_elements
