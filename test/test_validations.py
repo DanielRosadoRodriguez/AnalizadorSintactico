@@ -185,3 +185,23 @@ def test_is_not_imprime_elem_5():
     elements = ['cualquiercosa']
     assert len(validations.is_imprime_txt(elements)) != 0
 
+
+def test_is_lee():
+    elements = ['LEE', '[id]']
+    assert len(validations.is_lee(elements)) == 0
+
+
+def test_is_not_lee():
+    elements = ['LEE', 'claquiercosa']
+    assert validations.is_lee(elements) == ['LEE', 'claquiercosa']
+
+
+def test_is_not_lee_2():
+    elements = ['cualquiercosa', '[id]']
+    assert validations.is_lee(elements) == ['cualquiercosa', '[id]']
+
+
+def test_is_not_lee_3():
+    elements = ['cualquiercosa']
+    assert validations.is_lee(elements) == ['cualquiercosa']
+

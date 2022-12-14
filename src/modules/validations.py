@@ -31,6 +31,15 @@ def is_imprime_elem(remaining_elements: list) -> list:
     return remaining_elements
 
 
+def is_lee(remaining_elements: list) -> list:
+    if remaining_elements:
+        if remaining_elements[0] == 'LEE' and remaining_elements[1] == '[id]':
+            remaining_elements.pop(0)
+            remaining_elements.pop(0)
+            return remaining_elements[:]
+    return remaining_elements
+
+
 def is_elem(remaining_elements: list) -> list:
     if remaining_elements:
         if remaining_elements[0] in ['[id]', '[valorn]']:
