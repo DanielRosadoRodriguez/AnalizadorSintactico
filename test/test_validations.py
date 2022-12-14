@@ -119,3 +119,9 @@ def test_is_not_operation_12():
 def test_is_not_operation_13():
     elements = ['[valorn]', '', '[id]', '']
     assert len(validations.is_operation(elements)) != 0
+
+
+def test_is_imprime_txt():
+    elements = ['IMPRIME', '[txt]']
+    assert len(validations.is_imprime_txt(elements)) == 0
+

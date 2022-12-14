@@ -9,12 +9,17 @@ def is_program_file(remaining_elements: list) -> list:
             remaining_elements.pop()
             return remaining_elements
     return remaining_elements
-def is_sent(remaining_elements: list) -> list:
+
+
+def is_imprime_txt(remaining_elements: list) -> list:
     if remaining_elements:
-        pass
-
-
+        if len(remaining_elements) >= 2 and remaining_elements[0] == 'IMPRIME' and remaining_elements[1] == '[txt]':
+            remaining_elements.pop(0)
+            remaining_elements.pop(0)
+            result = remaining_elements[:]
+            return result
     return remaining_elements
+
 
 
 def is_elem(remaining_elements: list) -> list:
