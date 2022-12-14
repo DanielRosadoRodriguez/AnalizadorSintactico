@@ -224,3 +224,28 @@ def test_is_not_asignment():
 def test_is_not_asignment_3():
     elements = ['[id]']
     assert validations.is_assignment(elements) == ['[id]']
+
+
+def test_is_not_asignment_4():
+    elements = ['[id]', 'IMPRIME']
+    assert validations.is_assignment(elements) == ['[id]', 'IMPRIME']
+
+
+def test_is_not_asignment_5():
+    elements = ['[id]', 'LEE']
+    assert validations.is_assignment(elements) == ['[id]', 'LEE']
+
+
+def test_is_not_asignment_6():
+    elements = ['<EXPR>', 'IMPRIME']
+    assert validations.is_assignment(elements) == ['<EXPR>', 'IMPRIME']
+
+
+def test_is_not_asignment_7():
+    elements = ['<EXPR>', '<TERM>']
+    assert validations.is_assignment(elements) == ['<EXPR>', '<TERM>']
+
+
+def test_is_not_asignment_8():
+    elements = ['<EXPR>', '*', '<TERM>']
+    assert validations.is_assignment(elements) == ['<EXPR>', '*', '<TERM>']
