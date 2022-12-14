@@ -19,7 +19,6 @@ def is_sents_sent(remaining_elements: list) -> list:
             result = is_imprime_txt(result)
             result = is_imprime_elem(result)
             result = is_lee(result)
-            print(result)
             result = is_assignment(result)
             cont += 1
             if cont == 5:
